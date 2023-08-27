@@ -1,5 +1,6 @@
 package com.example.crud3
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -42,6 +43,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
         queue.add(resultadoPost)
+    }
+
+    fun consultar(view: View){
+        var txtid=findViewById<EditText>(R.id.txtid)
+        var intent= Intent(this,MainActivity2::class.java)
+        intent.putExtra("id",txtid.text.toString())
+        startActivity(intent)
     }
 }
 
